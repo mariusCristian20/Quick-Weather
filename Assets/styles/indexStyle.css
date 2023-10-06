@@ -238,7 +238,7 @@ main{
     width: 100%;
     padding: 5px 35px 20px 20px;
     margin: 0 auto 10px auto;
-    bottom: 0;
+    bottom: -90px;
     left: 50%;
     position: absolute;
     transform: translateX(-50%);
