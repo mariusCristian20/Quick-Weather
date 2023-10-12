@@ -159,21 +159,23 @@ function createSpan(i, cardDiv, hourlyObject, hourlyUnit) {
 }
 
 function currentWeatherFunction(data) {
+
     const keys = Object.keys(data.current_weather);
     const currentWeatherSpanArray = Array.from(currentWeatherSpan);
-    for (let i = 0; i < currentWeatherSpanArray.length; i++) {
+    for (let i = 0; i < keys.length; i++) {
         switch (keys[i]) {
             case "temperature":
-                currentWeatherSpanArray[i].innerText = data.current_weather.temperature + " °C";
+                currentWeatherSpanArray[0].innerText = data.current_weather.temperature + " °C";
                 break;
             case "windspeed":
-                currentWeatherSpanArray[i].innerText = data.current_weather.windspeed + " km/h";
+                currentWeatherSpanArray[1].innerText = data.current_weather.windspeed + " km/h";
                 break;
             case "winddirection":
-                currentWeatherSpanArray[i].innerText = data.current_weather.winddirection + "°";
+                currentWeatherSpanArray[2].innerText = data.current_weather.winddirection + "°";
                 break;
 
             default:
+                console.log("Unknown weather");
                 break;
         }
     }
