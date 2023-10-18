@@ -288,6 +288,9 @@ header {
     .infoContainer .cityContainer .weatherVariables .currentWeather {
         font-size: 1rem;
     }
+    .infoContainer .logo {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 520px) {
