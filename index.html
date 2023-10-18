@@ -9,20 +9,26 @@
         content="An website made for finding weather information about a city very easy and quickly">
     <meta name="keywords" content="weather quick forecast Bucharest London">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="Assets/styles/indexStyle.css" type="text/css">
+    <!-- <link rel="stylesheet" href="./Assets/styles/header-style.css"> -->
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200&family=Titillium+Web&display=swap"
         rel="stylesheet">
 
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         rel="preconnect preload">
 
+    <!-- FavIcon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./Assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./Assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./Assets/favicon/favicon-16x16.png">
 
+    <!-- JavaScript -->
     <script src="./Assets/scripts/index.js" defer></script>
 
     <title>Quick Weather</title>
@@ -31,43 +37,59 @@
 <body>
 
 
-    <div class="infoContainer">
-        <div class="containerLogoLegend">
-            <h1 class="logo">Quick Weather</h1>
-            <div class="containerLegend">
-                <p id="legend">Legend</p>
-                <div class="legendAirQuality" id="legendAirQuality">
-                    <div>
-                        <span>PM <sub>2.5</sub></span>
-                        <span>Good 0-10</span>
-                        <span>Fair 10-20</span>
-                        <span>Moderate 20-25</span>
-                        <span>Poor 25-50</span>
-                        <span>Very Poor 50-75</span>
-                        <span>Extremely Poor 75-800</span>
+    <header>
+        <div class="infoContainer">
+            <div class="containerLogoLegend">
+                <h1 class="logo">Quick Weather</h1>
+                <div class="containerInfoData">
+                    <div class="containerDayHour">
+                        <p id="dayHour">Sunday 15 October, 19:44</p>
                     </div>
+                    <div class="containerLegend">
+                        <p id="legend">Legend</p>
+                        <div class="legendAirQuality" id="legendAirQuality">
+                            <div>
+                                <span>PM <sub>2.5</sub></span>
+                                <span>Good 0-10</span>
+                                <span>Fair 10-20</span>
+                                <span>Moderate 20-25</span>
+                                <span>Poor 25-50</span>
+                                <span>Very Poor 50-75</span>
+                                <span>Extremely Poor 75-800</span>
+                            </div>
 
-                    <div>
-                        <span>PM <sub>10</sub></span>
-                        <span>Good 0-20</span>
-                        <span>Fair 20-40</span>
-                        <span>Moderate 40-50</span>
-                        <span>Poor 50-100</span>
-                        <span>Very Poor 100-150</span>
-                        <span>Extremely Poor 150-1200</span>
+                            <div>
+                                <span>PM <sub>10</sub></span>
+                                <span>Good 0-20</span>
+                                <span>Fair 20-40</span>
+                                <span>Moderate 40-50</span>
+                                <span>Poor 50-100</span>
+                                <span>Very Poor 100-150</span>
+                                <span>Extremely Poor 150-1200</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="cityContainer">
-            <h2 class="city" title="Change City" id="city">Bucharest</h2>
-            <div class="weatherVariables">
-                <span title="Temperature" class="currentWeather"></span>
-                <span title="Wind Speed" class="currentWeather"></span>
-                <span title="Wind Direction" class="currentWeather"></span>
+
+            <div class="citySearch">
+                <input type="search" name="search" id="search" placeholder="Search for a city">
+                <i class="fa-solid fa-magnifying-glass magnifying"></i>
+            </div>
+
+            <div class="cityContainer">
+                <h2 class="city" title="Change City" id="city">Bucharest</h2>
+                <div class="weatherVariables">
+                    <i class="fa-solid fa-temperature-half iconsCurrent tempIcon"></i>
+                    <span title="Temperature" class="currentWeather temp">23.5° C</span>
+                    <i class="fa-solid fa-wind iconsCurrent"></i>
+                    <span title="Wind Speed" class="currentWeather wdSpeed">10 km/h</span>
+                    <i class="fa-regular fa-compass iconsCurrent"></i>
+                    <span title="Wind Direction" class="currentWeather wdDirection">234 °</span>
+                </div>
             </div>
         </div>
-    </div>
+    </header>
 
 
     <main>
@@ -99,16 +121,6 @@
         </div>
 
     </main>
-
-
-    <div class="citySearch">
-        <label for="search">Search a city</label>
-        <input type="search" name="search" id="search" placeholder="Search for a city">
-        <i class="fa-solid fa-magnifying-glass" style="color: #000000; position: absolute;
-    bottom: 25px;"></i>
-    </div>
-
-
 </body>
 
 </html>

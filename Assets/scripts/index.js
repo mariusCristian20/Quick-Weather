@@ -5,6 +5,7 @@ const legend = document.getElementById("legend");
 const legendAirQuality = document.getElementById("legendAirQuality");
 const searchCity = document.getElementById("search");
 let city = document.getElementById("city");
+const dayHour = document.getElementById("dayHour");
 
 legend.addEventListener("click", () => {
     legendAirQuality.classList.toggle("active");
@@ -62,6 +63,21 @@ if ((date.getMonth() + 1) >= 10 && date.getDate() >= 10) {
     nowDate = date.getFullYear() + "-0" + (date.getMonth() + 1) + "-0" + date.getDate();
 }
 
+// setInterval(checkTime, 1000);
+
+function giveTime() {
+    // Sets the date to the current time
+    dayHour.innerText = date.toDateString();
+
+    // Stets the background image of the body by the hour
+    if (date.getHours() >= 7 && date.getHours() <= 18) {
+        document.body.style.backgroundImage = "url('Assets/images/julian-hochgesang-unsplash.jpg')";
+    } else if (date.getHours() >= 19 && date.getHours() <= 23 || date.getHours() >= 0 && date.getHours() <= 6) {
+        document.body.style.backgroundImage = "url('Assets/images/joshua-woroniecki-unsplash.jpg')";
+    } else {
+        document.body.style.backgroundColor = "#2c0c07";
+    }
+}
 
 function updateLatitudeLongitude(data) {
     cityName = data.results[0].name;
@@ -120,6 +136,9 @@ function fetchAPI() {
             console.log(airQualityAPI);
             console.error(errors);
         });
+
+    // Call Date and Hour Function
+    giveTime();
 }
 
 function createWeather(data) {
@@ -175,7 +194,7 @@ function currentWeatherFunction(data) {
                 break;
 
             default:
-                console.log("Unknown weather");
+                console.log("Current data variable unavailable");
                 break;
         }
     }
